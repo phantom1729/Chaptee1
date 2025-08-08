@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solution Wallah</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Pacifico&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    .top-section {
+      background: linear-gradient(135deg, #001f3f, #005f73);
+      text-align: center;
+      padding: 1em;
+    }
+
+    .logo-box {
+      background-color: #333;
+      color: red;
+      padding: 1em 3em;
+      font-size: 2em;
+      font-family: 'Orbitron', sans-serif;
+      border-radius: 1em;
+      box-shadow: 0 0 1em yellow, 0 0 1.5em yellow, inset 0 0 1em yellow;
+      border: 2px solid yellow;
+      display: inline-block;
+    }
+
+    .header-name {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #fff;
+      margin-top: 0.5em;
+      text-shadow: 0 0 10px yellow;
+    }
+
+    .quote {
+      margin-top: 1em;
+      font-size: 1.1em;
+      font-family: 'Orbitron', sans-serif;
+      color: #ffeb3b;
+      animation: fadeInQuotes 3s ease-in-out;
+    }
+
+    @keyframes fadeInQuotes {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .video-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2em;
+      gap: 2em;
+    }
+
+    .video-box {
+      width: 300px;
+      text-align: center;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 170px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00f, 0 0 30px #0ff;
+    }
+
+    .play-button {
+      --glow-color: #0ff;
+      --btn-bg: #111;
+      margin-top: 0.8em;
+      padding: 0.6em 1.5em;
+      font-size: 1em;
+      font-weight: bold;
+      color: var(--glow-color);
+      background-color: var(--btn-bg);
+      border: 2px solid var(--glow-color);
+      border-radius: 2em;
+      cursor: pointer;
+      text-shadow: 0 0 5px var(--glow-color);
+      box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color), inset 0 0 10px var(--glow-color);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .play-button:hover {
+      background-color: var(--glow-color);
+      color: black;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      font-weight: bold;
+      font-family: 'Orbitron', sans-serif;
+      text-shadow: 0 0 5px #ff0, 0 0 15px #ff0;
+    }
+
+    @media (max-width: 768px) {
+      .video-box {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-section">
+    <div class="logo-box">Solution Wallah</div>
+    <div class="header-name">MD. Shamsheer Alam</div>
+    <div class="quote" id="quote"></div>
+  </div>
+
+  <div class="video-grid">
+    <!-- Video 1 -->
+    <div class="video-box">
+      <iframe id="video1" src="https://www.youtube.com/embed/VIDEO_ID_1?enablejsapi=1&rel=0&modestbranding=1&controls=1"></iframe>
+      <button class="play-button" onclick="play('video1')">▶ Play</button>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-box">
+      <iframe id="video2" src="https://www.youtube.com/embed/VIDEO_ID_2?enablejsapi=1&rel=0&modestbranding=1&controls=1"></iframe>
+      <button class="play-button" onclick="play('video2')">▶ Play</button>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="video-box">
+      <iframe id="video3" src="https://www.youtube.com/embed/VIDEO_ID_3?enablejsapi=1&rel=0&modestbranding=1&controls=1"></iframe>
+      <button class="play-button" onclick="play('video3')">▶ Play</button>
+    </div>
+
+    <!-- Video 4 -->
+    <div class="video-box">
+      <iframe id="video4" src="https://www.youtube.com/embed/VIDEO_ID_4?enablejsapi=1&rel=0&modestbranding=1&controls=1"></iframe>
+      <button class="play-button" onclick="play('video4')">▶ Play</button>
+    </div>
+
+    <!-- Video 5 -->
+    <div class="video-box">
+      <iframe id="video5" src="https://www.youtube.com/embed/VIDEO_ID_5?enablejsapi=1&rel=0&modestbranding=1&controls=1"></iframe>
+      <button class="play-button" onclick="play('video5')">▶ Play</button>
+    </div>
+
+    <!-- Video 6 -->
+    <div class="video-box">
+      <iframe id="video6" src="https://www.youtube.com/embed/VIDEO_ID_6?enablejsapi=1&rel=0&modestbranding=1&controls=1"></iframe>
+      <button class="play-button" onclick="play('video6')">▶ Play</button>
+    </div>
+
+    <!-- Add more videos below as needed using the same structure -->
+  </div>
+
+  <footer>Made by :- Aryan Patel</footer>
+
+  <script>
+    const quotes = [
+      "Believe in yourself. You are braver than you think.",
+      "Success is no accident. It is hard work and perseverance.",
+      "Push yourself, because no one else is going to do it for you.",
+      "Great things never come from comfort zones.",
+      "Dream it. Wish it. Do it.",
+      "Little things make big days.",
+      "It always seems impossible until it is done.",
+      "Stay motivated. Keep pushing. Never give up."
+    ];
+    let q = 0;
+    function showQuote() {
+      document.getElementById('quote').textContent = quotes[q];
+      q = (q + 1) % quotes.length;
+    }
+    setInterval(showQuote, 4000);
+    showQuote();
+
+    function play(id) {
+      const iframe = document.getElementById(id);
+      iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+    }
+  </script>
+
+</body>
+</html>
